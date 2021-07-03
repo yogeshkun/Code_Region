@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The onclick Event</h1>
+
+
+
+<input onclick="myFunction()" id = 'asd'>
+
+
+
+<script>
+   		var val = 0;
+
+
+    function myFunction() {
+         var newinput = document.createElement('input');
+  newinput.type = 'text';
+
+  newinput.setAttribute('id', "asd");
+    newinput.setAttribute('onclick', 'myFunction()');
+
+    var old = document.getElementById("asd");
+ // document.body.insertAdjacentElement(newinput,old);
+ insertAfter(newinput,old)
+  val = val + 1;
+    old.setAttribute('id', val);
+    old.setAttribute('onclick', '');
+  alert(old.nextSibiling);
+}
+function insertAfter(newNode, currentNode) {
+    currentNode.parentNode.insertBefore(newNode,currentNode.nextSibling);
+}
+</script>
+</body>
+</html>
