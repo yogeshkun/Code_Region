@@ -12,7 +12,7 @@ def sort(request):
     return render(request, 'SortApp/sort.html')
 
 def search(request):
-    return render(request, 'SortApp/sort.html')
+    return render(request, 'SortApp/linear.html')
 
 def getelement(request):
     context = {'req' : request.GET.get('data')}
