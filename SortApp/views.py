@@ -32,14 +32,8 @@ def linearview(request):
         # return HttpResponse(arr)
         # arr = [10, 20, 30, 40, 50, 60, 70, 80]
         # key = int(input("Enter Element you want to find:"))
-        flag = 0
-        for j in range(len(arr)):
-            if key == arr[j]:
-                flag = 1
-                response = ("Element found at position {}".format(j + 1))
-        if flag == 0:
-            return HttpResponse("Element Not Found")
-        return render(request, 'SortApp/getele.html', {'req' : response})
+
+        return LinearSearch(arr, key)
     else:
         return render(request, 'SortApp/getele.html', {'req' : 'linearview'})
 
@@ -59,7 +53,14 @@ def binaryview(request):
 
 
 ########### ALGOS ############
-
+def LinearSearch(arr, key):
+    flag = 0
+    for i in range(len(arr)):
+        if key == arr[i]:
+            flag = 1
+            return HttpResponse("Element found at position {}".format(i + 1))
+    if flag == 0:
+        return HttpResponse("Element Not Found")
 
 
 def BinarySearch(arr, key):
