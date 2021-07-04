@@ -57,7 +57,7 @@ body {
 
 /* Style the header */
 header {
-  background-color: lightblue;
+  background-color: #2B2B2B;
   padding: 30px;
   text-align: center;
   
@@ -72,7 +72,7 @@ header {
   -webkit-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
   -moz-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
   box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
-  color: black;
+  color: white;
   text-align: center;
   font-size: 30px; 
   font-weight: bold;
@@ -101,7 +101,9 @@ table,th,tr{
 #bold{
   font-weight: bold;
 }
-
+.ais{
+  background-color:lightblue;
+}
 </style>
 </head>
 <body data-spy="scroll" data-target="#myScrollspy" data-offset="20">
@@ -128,7 +130,7 @@ table,th,tr{
     </nav>
     </div>
     <div class="col-xs-9 ">
-      <div id="section1">    
+      <div id="section1" class="ais">    
         <p id="title">What is  Linear Search ?</p>
         <div class="contain">
           <p>&emsp;&emsp;&emsp;Linear Search is also called as sequential search or serial search. This is the traditional technique for searching an element in a collection of elements. In this method of searching, the element to be found is searched sequentially in the list. It begins to search first item in list, continues searching sequentially (item by item) through the list, until desired item (key) is found or until end of list is reached. If the element is not found till the end this means that the element is not present in the list. This method can be performed on a sorted or an unsorted list. </p>
@@ -163,7 +165,7 @@ table,th,tr{
       <div id="section4">    
       <p id="title">Flowchart : </p>  <br>    
       <div >
-        <img class="mx-auto d-block"  src={% static "linear.gif" %}>
+        <img src={% static "linear.jpg" %}>
       </div>
       </div>
       <div id="section5">  
