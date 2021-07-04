@@ -45,7 +45,8 @@ text-transform:uppercase;
 		{% csrf_token %}
 
 
-            <input onclick="myFunction()" id = 'asd' class="text" placeholder="arr(0)">
+            <input onclick="myFunction()" id = 'asd' class="text" placeholder="arr(0)"><br>
+       
 
 
 
@@ -62,7 +63,7 @@ text-transform:uppercase;
 
     function myFunction() {
         const newinput = document.createElement('input');
-        num = 1;
+        
         newinput.type = 'text';
         newinput.setAttribute('id', "asd");
         newinput.setAttribute('class', "text");

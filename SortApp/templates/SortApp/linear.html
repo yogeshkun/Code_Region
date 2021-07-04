@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +16,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300&display=swap" rel="stylesheet">
 <style>
 body {
     position: relative;
@@ -24,15 +28,30 @@ body {
   position :fixed;
   top :130px;
 }
-  #section1 {color: #fff; background-color: #1E88E5;}
-  #section2 {color: #fff; background-color: #673ab7;}
-  #section3 {color: #fff; background-color: #ff9800;}
-  #section41 {color: #fff; background-color: #00bcd4;}
-  #section42 {color: #fff; background-color: #009688;}
+  #section1,#section2,#section3,#section4,#section5 {
+ -webkit-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+  height:100%;
+  font-family : 'Roboto+Mono';
+  padding-top: 60px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+  padding-left: 50px;
   
+  }
+  #title{
+    text-align: justify;
+    font-size : 40px;
+
+  }
+.contain{
+  font-size:30px;
+  font-family: 'Alegreya Sans', sans-serif;
+}
   @media screen and (max-width: 810px) {
-    #section1, #section2, #section3, #section41, #section42  {
-      margin-left: 150px;
+    #section1, #section2, #section3, #section4, #section4  {
+      
     }
   }
 
@@ -53,14 +72,10 @@ header {
   -webkit-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
   -moz-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
   box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
-  
-  padding: 50px 10px;
   color: black;
   text-align: center;
   font-size: 30px; 
   font-weight: bold;
-  
- 
   width: 100%;
   transition: 0.2s;
 }
@@ -93,38 +108,122 @@ div.col-sm-9 div {
         <li class="active"><a href="#section1">Intro</a></li>
         <li><a href="#section2">Algo</a></li>
         <li><a href="#section3">Program</a></li>
-        <li class="dropdown">
+        <li><a href="#section4">Flowchart</a></li>
+        <!--<li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Section 4 <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#section41">Section 4-1</a></li>
             <li><a href="#section42">Section 4-2</a></li>                     
           </ul>
-        </li>
+        </li>-->
       </ul>
     </nav>
     </div>
     <div class="col-xs-9 ">
         <div id="section1">    
-        <h1>Section 1</h1>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <p>Aliquam malesuada bibendum arcu vitae elementum curabitur vitae nunc. Platea dictumst quisque sagittis purus sit amet volutpat consequat. Feugiat pretium nibh ipsum consequat nisl. Vitae semper quis lectus nulla. Risus commodo viverra maecenas accumsan lacus vel facilisis. Est ullamcorper eget nulla facilisi etiam. Etiam erat velit scelerisque in dictum non consectetur. Pulvinar neque laoreet suspendisse interdum consectetur. Felis imperdiet proin fermentum leo vel orci. Facilisis volutpat est velit egestas dui id ornare.</p>
+        <p id="title">What is  Linear Search ?</p>
+      <div class="contain">
+        <p>Linear Search is also called as sequential search or serial search. This is the traditional technique for searching an element in a collection of elements. In this method of searching, the element to be found is searched sequentially in the list. It begins to search first item in list, continues searching sequentially (item by item) through the list, until desired item (key) is found or until end of list is reached. If the element is not found till the end this means that the element is not present in the list. This method can be performed on a sorted or an unsorted list. </p>
+        <p>The time and space complexity for linear search is: • Time complexity (Best Case) : O(1) • Time complexity (Worst Case) : O(n) • Time complexity (Average Case) : O(n) • Space complexity : O(1) </p>
+      </div>
       </div>
       <div id="section2"> 
-        <h1>Section 2</h1>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <p>Aliquam malesuada bibendum arcu vitae elementum curabitur vitae nunc. Platea dictumst quisque sagittis purus sit amet volutpat consequat. Feugiat pretium nibh ipsum consequat nisl. Vitae semper quis lectus nulla. Risus commodo viverra maecenas accumsan lacus vel facilisis. Est ullamcorper eget nulla facilisi etiam. Etiam erat velit scelerisque in dictum non consectetur. Pulvinar neque laoreet suspendisse interdum consectetur. Felis imperdiet proin fermentum leo vel orci. Facilisis volutpat est velit egestas dui id ornare.</p>
-      </div>        
-      <div id="section3">         
-        <h1>Section 3</h1>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <p>Aliquam malesuada bibendum arcu vitae elementum curabitur vitae nunc. Platea dictumst quisque sagittis purus sit amet volutpat consequat. Feugiat pretium nibh ipsum consequat nisl. Vitae semper quis lectus nulla. Risus commodo viverra maecenas accumsan lacus vel facilisis. Est ullamcorper eget nulla facilisi etiam. Etiam erat velit scelerisque in dictum non consectetur. Pulvinar neque laoreet suspendisse interdum consectetur. Felis imperdiet proin fermentum leo vel orci. Facilisis volutpat est velit egestas dui id ornare.</p>
-      </div>
-      <div id="section41">         
+      <p id="title">Algorithm</p>
+      <div class="contain" > 
+        <p> Linear Search Algorithm is as follows: 
+          Step 1: Set i to 1 
+          Step 2: If i > n then go to step 7 
+          Step 3: If A[i] = x then go to step 6 
+          Step 4: Set i to i + 1 
+          Step 5: Go to Step 2 
+          Step 6: Print Element x Found at index i and go to step 8 
+          Step 7: Print element not found 
+          Step 8: Exit 
+ 
+ </p>
+ </div>
+        </div>        
+      <div id="section3"> 
+       <p id="title">Implementation of Linear Search:</p>      
+       
+        <p>Step 1 - The list given is the list of elements in an unsorted array.  
+Step 2 - The element to be searched is called item, as mentioned in the image, so value item, is compared with all the elements of the array starting from 0th element. 
+Step 3 - As soon as any index contains the same value, we stop further comparisons and change flag value from 0 to 1. 
+Step 4 - If the value is not found until the end of the array then stop and print value not found. </p>
+     </div>
+      <div id="section4">    
+      <p id="title">Flowchart : </p>      
+        
+        <img src={% static "linear.gif" %}>
+     </div>
+      <div id="section5">  
+      <p id="title">Example demonstrating Linear search :</p>          
+        
+        <p>Consider the following example having 7 array elements.
+
+
+1	2	3	4	5	6	7
+3	20	11	34	9	41	18
+
+Element to search is 9.
+ 
+
+Pass 1:-
+Compare Data[1] with 9
+
+
+1	2	3	4	5	6	7
+3	20	11	34	9	41	18
+
+As Data[1] ! = 9 so go for next pass
+
+Pass 2:-
+Compare Data[2] with 9
+
+
+1	2	3	4	5	6	7
+3	20	11	34	9	41	18
+
+As Data[2] ! = 9 so go for next pass
+
+Pass 3:-
+Compare Data[3] with 9
+
+
+1	2	3	4	5	6	7
+3	20	11	34	9	41	18
+
+As Data[3] ! = 9 so go for next pass
+
+Pass 4:-
+Compare Data[4] with 9
+
+
+1	2	3	4	5	6	7
+3	20	11	34	9	41	18
+
+As Data[4] ! = 9 so go for next pass
+
+Pass 5:-
+Compare Data[5] with 9
+
+
+1	2	3	4	5	6	7
+3	20	11	34	9	41	18
+ 
+
+As Data[5] = = 9 then print “Element Is Found”
+
+Therefore here the given element 9 is found at 5th location.
+
+</p>
+     </div>
+      <div id="section51">         
         <h1>Section 4-1</h1>
         <p>Try to scroll this section and look at the navigation list while scrolling!</p>
         <p>Aliquam malesuada bibendum arcu vitae elementum curabitur vitae nunc. Platea dictumst quisque sagittis purus sit amet volutpat consequat. Feugiat pretium nibh ipsum consequat nisl. Vitae semper quis lectus nulla. Risus commodo viverra maecenas accumsan lacus vel facilisis. Est ullamcorper eget nulla facilisi etiam. Etiam erat velit scelerisque in dictum non consectetur. Pulvinar neque laoreet suspendisse interdum consectetur. Felis imperdiet proin fermentum leo vel orci. Facilisis volutpat est velit egestas dui id ornare.</p>
       </div>      
-      <div id="section42">         
+      <div id="section52">         
         <h1>Section 4-2</h1>
         <p>Try to scroll this section and look at the navigation list while scrolling!</p>
         <p>Aliquam malesuada bibendum arcu vitae elementum curabitur vitae nunc. Platea dictumst quisque sagittis purus sit amet volutpat consequat. Feugiat pretium nibh ipsum consequat nisl. Vitae semper quis lectus nulla. Risus commodo viverra maecenas accumsan lacus vel facilisis. Est ullamcorper eget nulla facilisi etiam. Etiam erat velit scelerisque in dictum non consectetur. Pulvinar neque laoreet suspendisse interdum consectetur. Felis imperdiet proin fermentum leo vel orci. Facilisis volutpat est velit egestas dui id ornare.</p>
@@ -145,6 +244,7 @@ function scrollFunction() {
   }
  
 }
+
 </script>   
       
 </body>
