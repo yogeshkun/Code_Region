@@ -34,7 +34,7 @@ def linearview(request):
         value = linearSearch(arr,key)
         return render(request, 'SortApp/linear/linearsearch.html', {'req': value})
     else:
-        return render(request, 'SortApp/linear/linearview.html', {'req': 'linearview'})
+        return render(request, 'SortApp/linear/linear.html', {'req': 'linearview'})
 
 
 def binaryview(request):
