@@ -5,7 +5,11 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('linearview/', views.linearview, name='linearview'),
     path('binaryview/', views.binaryview, name='binaryview'),
-    path('getele/', views.getelement, name='elem'),
+    path('bubblesortview/', views.bubblesortview, name='bubblesortview'),
+    path('mergesortview/', views.mergesortview, name='mergesortview'),
+    path('insertionsortview/', views.insertionsortview, name='insertionsortview'),
+    path('selectionsortview/', views.selectionsortview, name='selectionsortview'),
+    path('stackview/', views.stackview, name='stackview'),
     path('sort', views.sort, name='sort'),
     path('search', views.search, name='search'),
 

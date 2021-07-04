@@ -29,7 +29,7 @@ body {
   position :fixed;
   top :130px;
 }
-  #section1,#section2,#section3,#section4,#section5 {
+  #section1,#section2,#section3,#section4,#section5,#section6 {
  -webkit-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
   -moz-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
   box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
@@ -110,10 +110,46 @@ table{
 .ais{
   background-color:lightblue;
 }
+.square {
+  height: 90px;
+  width: 300px;
+  background-color: lightblue;
+
+}
+.text{
+  background-color: yellow;
+margin-bottom: 5px;
+box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.5);
+font-family: 'ProximaNova-Bold';
+border: 0;
+width: 100px;
+height:100px;
+text-align: center;
+text-transform: capitalize;
+padding:15px;
+padding-left:21px;
+text-transform:uppercase;
+
+}
+ input:focus, textarea:focus, select:focus{
+       
+    }
+    footer {
+    background-color: #2d2d30;
+    color: #f5f5f5;
+    padding: 32px;
+  }
+  footer a {
+    color: #f5f5f5;
+  }
+  footer a:hover {
+    color: #777;
+    text-decoration: none;
+  }
 </style>
 </head>
 <body data-spy="scroll" data-target="#myScrollspy" data-offset="20">
-<header id="header">Welcome to Linear Search</header>
+<header id="header">Welcome to {{ req }}</header>
 
 <div class="container">
   <div class="row page__content-container">
@@ -125,6 +161,7 @@ table{
         <li><a href="#section3">Program -</a></li>
         <li><a href="#section4">Flowchart -</a></li>
         <li><a href="#section5">Example -</a></li>
+        <li><a href="#section6">Practise -</a></li>
         <!--<li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Section 4 <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -334,11 +371,42 @@ table{
 
         </p>
       </div>
+      </div>
+      <div id="section6">    
+      <p id="title">Practise : </p>  <br>    
+      <form method="POST" action="/{{ req }}/">
+      <div class="contain" >
+    {% csrf_token %}
+    <p id="bold"> Enter Elements in below array -</p>
+    
+    </div>
+    </br>
+    <input onclick="myFunction()" id ="asd" class="text" placeholder="arr(0)"><br>
+    <div class="contain" >
+    
+    <p id="bold"> Enter Element you want to find -</p>
+    <p></p>
+    
+    
+    <input type="text" name="textfield"  onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+    <button type="submit" name="sub" id="sub" class="btn btn-primary btn-lg">
+      Submit
+    </button>
+    <input type="hidden" />
+    </div>
+  </form>
+      </div>
      </div>
     </div>
   </div>
 </div>
+<!-- Footer -->
+<footer class="text-center">
+  
     
+  </a><br><br>
+  <p> Make your-self perfect. Connect us <a href="https://coderegion.herokuapp.com/" data-toggle="tooltip" title="Visit Code_Region">www.coderegion.herokuapp.com/</a></p> 
+</footer>
 <script>
 // When the user scrolls down 50px from the top of the document, resize the header's font size
 window.onscroll = function() {scrollFunction()};
@@ -353,7 +421,33 @@ function scrollFunction() {
 }
 
 </script>   
-      
+      <script>
+    let val = 0;
+
+    function myFunction() {
+      const newinput = document.createElement("input");
+      newinput.type = "text";
+      newinput.setAttribute("id", "asd");
+      newinput.setAttribute('class', "text");
+      newinput.setAttribute('placeholder', `arr ${val}`);
+      newinput.setAttribute("onclick", "myFunction()");
+
+      const old = document.getElementById("asd");
+      insertAfter(newinput, old);
+      val = val + 1;
+      old.setAttribute("id", val);
+      old.setAttribute("name", val);
+      newinput.setAttribute('placeholder', `arr ${val}`);
+      old.setAttribute("onclick", "");
+      const sub = document.getElementById("sub");
+      sub.setAttribute("value", val);
+    }
+    function insertAfter(newNode, currentNode) {
+      currentNode.parentNode.insertBefore(newNode, currentNode.nextSibling);
+      newNode;
+    }
+  </script>
+
 </body>
 
 
