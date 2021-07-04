@@ -94,11 +94,18 @@ div.col-sm-9 div {
   margin-top: 15rem;
 }
 
+table,th,tr{
+  text-align:center;
+}
+
+#bold{
+  font-weight: bold;
+}
 
 </style>
 </head>
 <body data-spy="scroll" data-target="#myScrollspy" data-offset="20">
-<header id="header">Welcome to Linear</header>
+<header id="header">Welcome to Linear Search</header>
 
 <div class="container">
   <div class="row page__content-container">
@@ -109,6 +116,7 @@ div.col-sm-9 div {
         <li><a href="#section2">Algo</a></li>
         <li><a href="#section3">Program</a></li>
         <li><a href="#section4">Flowchart</a></li>
+        <li><a href="#section5">Example</a></li>
         <!--<li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Section 4 <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -120,114 +128,205 @@ div.col-sm-9 div {
     </nav>
     </div>
     <div class="col-xs-9 ">
-        <div id="section1">    
+      <div id="section1">    
         <p id="title">What is  Linear Search ?</p>
-      <div class="contain">
-        <p>Linear Search is also called as sequential search or serial search. This is the traditional technique for searching an element in a collection of elements. In this method of searching, the element to be found is searched sequentially in the list. It begins to search first item in list, continues searching sequentially (item by item) through the list, until desired item (key) is found or until end of list is reached. If the element is not found till the end this means that the element is not present in the list. This method can be performed on a sorted or an unsorted list. </p>
-        <p>The time and space complexity for linear search is: • Time complexity (Best Case) : O(1) • Time complexity (Worst Case) : O(n) • Time complexity (Average Case) : O(n) • Space complexity : O(1) </p>
-      </div>
+        <div class="contain">
+          <p>&emsp;&emsp;&emsp;Linear Search is also called as sequential search or serial search. This is the traditional technique for searching an element in a collection of elements. In this method of searching, the element to be found is searched sequentially in the list. It begins to search first item in list, continues searching sequentially (item by item) through the list, until desired item (key) is found or until end of list is reached. If the element is not found till the end this means that the element is not present in the list. This method can be performed on a sorted or an unsorted list. </p>
+          <p>&emsp;&emsp;&emsp;The time and space complexity for linear search is: <br> • Time complexity (Best Case) : O(1) <br>• Time complexity (Worst Case) : O(n) <br>• Time complexity (Average Case) : O(n) <br> • Space complexity : O(1) </p>
+        </div>
       </div>
       <div id="section2"> 
-      <p id="title">Algorithm</p>
-      <div class="contain" > 
-        <p> Linear Search Algorithm is as follows: 
-          Step 1: Set i to 1 
-          Step 2: If i > n then go to step 7 
-          Step 3: If A[i] = x then go to step 6 
-          Step 4: Set i to i + 1 
-          Step 5: Go to Step 2 
-          Step 6: Print Element x Found at index i and go to step 8 
-          Step 7: Print element not found 
-          Step 8: Exit 
- 
- </p>
- </div>
-        </div>        
+        <p id="title">Algorithm</p>
+        <div class="contain" > 
+          <p> Linear Search Algorithm is as follows: <br>
+            <b>Step 1</b>:  Set i to 1 <br>
+            <b>Step 2</b>:  If i > n then go to step 7 <br> 
+            <b>Step 3</b>:  If A[i] = x then go to step 6 <br>
+            <b>Step 4</b>:  Set i to i + 1 <br>
+            <b>Step 5</b>:  Go to Step 2 <br>
+            <b>Step 6</b>:  Print Element x Found at index i and go to step 8 <br>
+            <b>Step 7</b>:  Print element not found <br>
+            <b>Step 8</b>:  Exit <br>
+          </p>
+        </div>
+      </div>        
       <div id="section3"> 
-       <p id="title">Implementation of Linear Search:</p>      
-       
-        <p>Step 1 - The list given is the list of elements in an unsorted array.  
-Step 2 - The element to be searched is called item, as mentioned in the image, so value item, is compared with all the elements of the array starting from 0th element. 
-Step 3 - As soon as any index contains the same value, we stop further comparisons and change flag value from 0 to 1. 
-Step 4 - If the value is not found until the end of the array then stop and print value not found. </p>
-     </div>
-      <div id="section4">    
-      <p id="title">Flowchart : </p>      
-        
-        <img src={% static "linear.gif" %}>
-     </div>
-      <div id="section5">  
-      <p id="title">Example demonstrating Linear search :</p>          
-        
-        <p>Consider the following example having 7 array elements.
-
-
-1	2	3	4	5	6	7
-3	20	11	34	9	41	18
-
-Element to search is 9.
- 
-
-Pass 1:-
-Compare Data[1] with 9
-
-
-1	2	3	4	5	6	7
-3	20	11	34	9	41	18
-
-As Data[1] ! = 9 so go for next pass
-
-Pass 2:-
-Compare Data[2] with 9
-
-
-1	2	3	4	5	6	7
-3	20	11	34	9	41	18
-
-As Data[2] ! = 9 so go for next pass
-
-Pass 3:-
-Compare Data[3] with 9
-
-
-1	2	3	4	5	6	7
-3	20	11	34	9	41	18
-
-As Data[3] ! = 9 so go for next pass
-
-Pass 4:-
-Compare Data[4] with 9
-
-
-1	2	3	4	5	6	7
-3	20	11	34	9	41	18
-
-As Data[4] ! = 9 so go for next pass
-
-Pass 5:-
-Compare Data[5] with 9
-
-
-1	2	3	4	5	6	7
-3	20	11	34	9	41	18
- 
-
-As Data[5] = = 9 then print “Element Is Found”
-
-Therefore here the given element 9 is found at 5th location.
-
-</p>
-     </div>
-      <div id="section51">         
-        <h1>Section 4-1</h1>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <p>Aliquam malesuada bibendum arcu vitae elementum curabitur vitae nunc. Platea dictumst quisque sagittis purus sit amet volutpat consequat. Feugiat pretium nibh ipsum consequat nisl. Vitae semper quis lectus nulla. Risus commodo viverra maecenas accumsan lacus vel facilisis. Est ullamcorper eget nulla facilisi etiam. Etiam erat velit scelerisque in dictum non consectetur. Pulvinar neque laoreet suspendisse interdum consectetur. Felis imperdiet proin fermentum leo vel orci. Facilisis volutpat est velit egestas dui id ornare.</p>
-      </div>      
-      <div id="section52">         
-        <h1>Section 4-2</h1>
-        <p>Try to scroll this section and look at the navigation list while scrolling!</p>
-        <p>Aliquam malesuada bibendum arcu vitae elementum curabitur vitae nunc. Platea dictumst quisque sagittis purus sit amet volutpat consequat. Feugiat pretium nibh ipsum consequat nisl. Vitae semper quis lectus nulla. Risus commodo viverra maecenas accumsan lacus vel facilisis. Est ullamcorper eget nulla facilisi etiam. Etiam erat velit scelerisque in dictum non consectetur. Pulvinar neque laoreet suspendisse interdum consectetur. Felis imperdiet proin fermentum leo vel orci. Facilisis volutpat est velit egestas dui id ornare.</p>
+      <p id="title">Implementation of Linear Search:</p> <br> 
+        <div class="contain" >    
+          <p> <b>Step 1</b> - The list given is the list of elements in an unsorted array.  <br>
+              <b>Step 2</b> - The element to be searched is called item, as mentioned in the image, so value item, is compared with all the elements of the array starting from 0th element. <br>
+              <b>Step 3</b> - As soon as any index contains the same value, we stop further comparisons and change flag value from 0 to 1. <br>
+              <b>Step 4</b> - If the value is not found until the end of the array then stop and print value not found. <br>
+          </p>
+        </div>
       </div>
+      <div id="section4">    
+      <p id="title">Flowchart : </p>  <br>    
+      <div >
+        <img class="mx-auto d-block"  src={% static "linear.gif" %}>
+      </div>
+      </div>
+      <div id="section5">  
+      <p id="title">Example demonstrating Linear search :</p>  
+      <div class="contain">      
+        <p>Consider the following example having 7 array elements.<br>
+                
+                <table class="table table-bordered">
+                  <tr>
+                    <th>0</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>20</td>
+                    <td>11</td>
+                    <td>34</td>
+                    <td>9</td>
+                    <td>41</td>
+                    <td>18</td>
+                  </tr>
+                </table>
+
+                Element to search is 9.<br>
+                
+
+                <br><a id="bold"> Pass 1:- </a> <br>
+                Compare Data[0] with 9<br>
+                <table class="table table-bordered">
+                  <tr>
+                    <th>0</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    
+                  </tr>
+                  <tr>
+                    <td style="color:red;">3</td>
+                    <td>20</td>
+                    <td>11</td>
+                    <td>34</td>
+                    <td>9</td>
+                    <td>41</td>
+                    <td>18</td>
+                  </tr>
+                </table>
+                As Data[0] ! = 9 so go for next pass
+
+                <br><a id="bold"> Pass 2:- </a><br>
+                Compare Data[1] with 9<br>
+                <table class="table table-bordered">
+                  <tr>
+                    <th>0</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td style="color:red;">20</td>
+                    <td>11</td>
+                    <td>34</td>
+                    <td>9</td>
+                    <td>41</td>
+                    <td>18</td>
+                  </tr>
+                </table>
+
+                As Data[1] ! = 9 so go for next pass
+
+                <br><a id="bold"> Pass 3:- </a><br>
+                Compare Data[2] with 9<br>
+                <table class="table table-bordered">
+                  <tr>
+                    <th>0</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td >20</td>
+                    <td style="color:red;">11</td>
+                    <td>34</td>
+                    <td>9</td>
+                    <td>41</td>
+                    <td>18</td>
+                  </tr>
+                </table>
+                As Data[2] ! = 9 so go for next pass
+
+               <br><a id="bold"> Pass 4:- </a><br>
+                Compare Data[3] with 9<br>
+                <table class="table table-bordered">
+                  <tr>
+                    <th>0</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td >20</td>
+                    <td >11</td>
+                    <td style="color:red;">34</td>
+                    <td>9</td>
+                    <td>41</td>
+                    <td>18</td>
+                  </tr>
+                </table>
+                As Data[3] ! = 9 so go for next pass
+
+               <br><a id="bold"> Pass 5:- </a><br>
+                Compare Data[4] with 9<br>
+                <table class="table table-bordered">
+                  <tr>
+                    <th>0</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td >20</td>
+                    <td >11</td>
+                    <td >34</td>
+                    <td style="color:red;">9</td>
+                    <td>41</td>
+                    <td>18</td>
+                  </tr>
+                </table>
+                <br>As Data[4] = = 9 then print “Element Is Found”<br>
+
+                Therefore here the given element 9 is found at 4th location.
+
+        </p>
+      </div>
+     </div>
     </div>
   </div>
 </div>
