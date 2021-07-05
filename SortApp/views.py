@@ -30,9 +30,10 @@ def linearview(request):
         return render(request, 'SortApp/linear/linear.html', context)
     if request.method == 'POST':
         arr = element_to_array(request.POST)
+        array = arr
         key = int(request.POST.get('textfield'))
         value = linearSearch(arr,key)
-        return render(request, 'SortApp/linear/linearsearch.html', {'req': value})
+        return render(request, 'SortApp/linear/linearsearch.html', {'req': value,'key':key,'array':array})
     else:
         return render(request, 'SortApp/linear/linear.html', {'req': 'linearview'})
 

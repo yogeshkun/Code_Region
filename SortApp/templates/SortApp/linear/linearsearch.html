@@ -29,7 +29,7 @@ body {
   position :fixed;
   top :130px;
 }
-  #section1,#section2,#section3,#section4,#section5,#section6 {
+  #section1,#section2,#section3,#section4,#section5,#section6,#section7 {
  -webkit-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
   -moz-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
   box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
@@ -154,14 +154,10 @@ text-transform:uppercase;
 <div class="container">
   <div class="row page__content-container">
     <div class="col-xs-3">
-        <nav class="" id="myScrollspy">
-      <ul class="nav nav-pills nav-stacked" style="font-family: 'Sora', sans-serif;font-size:20px;">
-        <li class="active"><a href="#section1">Introduction - </a></li>
-        <li><a href="#section2">Algorithm -</a></li>
-        <li><a href="#section3">Program -</a></li>
-        <li><a href="#section4">Flowchart -</a></li>
-        <li><a href="#section5">Example -</a></li>
-        <li><a href="#section6">Practise -</a></li>
+      <nav class="" id="myScrollspy">
+        <ul class="nav nav-pills nav-stacked" style="font-family: 'Sora', sans-serif;font-size:20px;">
+          <li  class="active"><a href="#section6">Practise -</a></li>
+          <li><a href="#section7">Program - </a></li>
         <!--<li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Section 4 <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -169,40 +165,59 @@ text-transform:uppercase;
             <li><a href="#section42">Section 4-2</a></li>                     
           </ul>
         </li>-->
-      </ul>
-    </nav>
+        </ul>
+      </nav>
     </div>
     <div class="col-xs-9 ">
+     <div id="section6">    
+        <p id="title">Practise : </p>  <br>  
+        <form method="POST" action="/{{ req }}/">
+          <div class="contain" >
+          {% csrf_token %}
+            <p id="bold"> You have searched - {{key}} </p>
+
+          </br>
+              {% if req == None %}
+                No elements found
+              {% endif %}
+              
+              {% if req != None %}
+              
+                <p id="bold">Elememts found  -  {{array.q}} </p>
+              {% endif %}
+          <p id="bold">Your Array  </p>
+          </div>
+          </br>
+          
+            <table border='1'>
+              <thead>
+                <tr>
+                
+                  {% for col in array %}
+
+                      <input id ="asd" class="text" value="{{col}}">
+                  {% endfor %}
       
-      
-      <div id="section6" class="ais">    
-      <p id="title">Practise : </p>  <br>    
-      <form method="POST" action="/{{ req }}/">
-      <div class="contain" >
-      
-    {% csrf_token %}
-    <p id="bold"> {{req}} </p>
-    <p id="bold"> Enter Elements in below array -</p>
-    
-    </div>
-    </br>
-    <input onclick="myFunction()" id ="asd" class="text" placeholder="arr(0)"><br>
-    <div class="contain" >
-    
-    <p id="bold"> Enter Element you want to find -</p>
-    <p></p>
-    
-    
-    <input type="text" name="textfield"  onkeypress="return event.charCode >= 48 && event.charCode <= 57">
-    <button type="submit" name="sub" id="sub" class="btn btn-primary btn-lg">
-      Submit
-    </button>
-   
-    <input type="hidden" />
-    </div>
-  </form>
+                </tr>
+              </thead>
+            </table>
+        
+        </form>
       </div>
-     </div>
+      <div id="section7">    
+        <p id="title">Program : </p>  <br>  
+        
+          <div class="contain" >
+          {% csrf_token %}
+            
+          <p id="bold">  </p>
+          </div>
+         
+          
+            
+        
+        
+      </div>
     </div>
   </div>
 </div>
@@ -235,7 +250,7 @@ function scrollFunction() {
       newinput.type = "text";
       newinput.setAttribute("id", "asd");
       newinput.setAttribute('class', "text");
-      newinput.setAttribute('placeholder', `arr ${val}`);
+      
       newinput.setAttribute("onclick", "myFunction()");
 
       const old = document.getElementById("asd");
@@ -243,7 +258,7 @@ function scrollFunction() {
       val = val + 1;
       old.setAttribute("id", val);
       old.setAttribute("name", val);
-      newinput.setAttribute('placeholder', `arr ${val}`);
+     
       old.setAttribute("onclick", "");
       const sub = document.getElementById("sub");
       sub.setAttribute("value", val);

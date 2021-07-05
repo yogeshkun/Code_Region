@@ -373,19 +373,19 @@ text-transform:uppercase;
       </div>
       </div>
       <div id="section6">    
-      <p id="title">Practise : </p>  <br>    
-      <form method="POST" action="/{{ req }}/">
-      <div class="contain" >
-    {% csrf_token %}
-    <p id="bold"> Enter Elements in below array -</p>
+        <p id="title">Practise : </p>  <br>    
+        <form method="POST" action="/{{ req }}/">
+          <div class="contain" >
+          {% csrf_token %}
+            <p id="bold"> Enter Elements in below array -</p>
     
-    </div>
-    </br>
-    <input onclick="myFunction()" id ="asd" class="text" placeholder="arr(0)"><br>
-    <div class="contain" >
+          </div>
+        </br>
+        <input onclick="myFunction()" id ="asd" class="text" placeholder="arr(0)"><br>
+        <div class="contain" >
     
-    <p id="bold"> Enter Element you want to find -</p>
-    <p></p>
+          <p id="bold"> Enter Element you want to find -</p>
+
     
     
     <input type="text" name="textfield"  onkeypress="return event.charCode >= 48 && event.charCode <= 57">
@@ -452,3 +452,27 @@ function scrollFunction() {
 
 
 </html>
+<p id="bold"> You have searched - {{key}} </p>
+
+              {% csrf_token %}
+              {% if req == None %}
+                No elements found
+              {% endif %}
+              
+              {% if req != None %}
+              
+                <p id="bold">Output -  {{array.q}} </p>
+              {% endif %}
+   
+               </br>
+            <table border='1'>
+              <thead>
+                <tr>
+                  {% for col in array %}
+                  
+                      <input id ="asd" class="text" value="{{col}}">
+                  {% endfor %}
+      
+                </tr>
+              </thead>
+            </table>
