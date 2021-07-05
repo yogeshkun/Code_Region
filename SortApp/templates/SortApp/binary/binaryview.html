@@ -1,44 +1,415 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SortApp</title>
-  <!-- CSS only -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-  <!-- JavaScript Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Code_Region</title>
+	<!-- CSS only -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Averia+Libre:wght@300&family=Sora:wght@200&display=swap" rel="stylesheet">
+<style>
+body {
+    position: relative;
+  }
+
+#myScrollspy{
+  position :fixed;
+  top :130px;
+}
+  #section1,#section2,#section3,#section4,#section5,#section6 {
+ -webkit-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+  height:100%;
+  font-family : 'Roboto+Mono';
+  padding-top: 60px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+  padding-left: 50px;
+  background-color:lightblue;
+  margin-bottom:10px;
+  }
+  #title{
+    text-align: justify;
+    font-size : 40px;
+
+  }
+.contain{
+  font-size:30px;
+  font-family: 'Alegreya Sans', sans-serif;
+}
+  @media screen and (max-width: 810px) {
+    #section1, #section2, #section3, #section4, #section4  {
+      
+    }
+  }
+
+/* Style the header */
+header {
+  background-color: #2B2B2B;
+  padding: 30px;
+  text-align: center;
+  
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 88px;
+  
+  font-family : 'Roboto+Mono';
+  -webkit-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+  color: white;
+  text-align: center;
+  font-size: 30px; 
+  font-weight: bold;
+  width: 100%;
+  transition: 0.2s;
+}
+
+div.col-sm-9 div {
+    height: 250px;
+    font-size: 28px;
+  }
+.header__content-text {
+  text-align: center;
+  padding: 15px 20px;
+}
+
+.page__content-container {
+  
+  margin-top: 15rem;
+}
+
+table,th,tr,td{
+  text-align:center;
+  border: 1px solid black;
+  
+}
+table{
+  width: 100%;
+}
+#bold{
+  font-weight: bold;
+}
+.ais{
+  background-color:lightblue;
+}
+.square {
+  height: 90px;
+  width: 300px;
+  background-color: lightblue;
+
+}
+.text{
+  background-color: yellow;
+margin-bottom: 5px;
+box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.5);
+font-family: 'ProximaNova-Bold';
+border: 0;
+width: 100px;
+height:100px;
+text-align: center;
+text-transform: capitalize;
+padding:15px;
+padding-left:21px;
+text-transform:uppercase;
+
+}
+ input:focus, textarea:focus, select:focus{
+       
+    }
+    footer {
+    background-color: #2d2d30;
+    color: #f5f5f5;
+    padding: 32px;
+  }
+  footer a {
+    color: #f5f5f5;
+  }
+  footer a:hover {
+    color: #777;
+    text-decoration: none;
+  }
+</style>
 </head>
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="20">
+<header id="header">Welcome to {{ req }}</header>
 
-<body>
-  <h1>Welcome To {{ req }}</h1>
+<div class="container">
+  <div class="row page__content-container">
+    <div class="col-xs-3">
+        <nav class="" id="myScrollspy">
+      <ul class="nav nav-pills nav-stacked" style="font-family: 'Sora', sans-serif;font-size:20px;">
+        <li class="active"><a href="#section1">Introduction - </a></li>
+        <li><a href="#section2">Algorithm -</a></li>
+        <li><a href="#section3">Program -</a></li>
+        <li><a href="#section4">Flowchart -</a></li>
+        <li><a href="#section5">Example -</a></li>
+        <li><a href="#section6">Practise -</a></li>
+        <!--<li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Section 4 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#section41">Section 4-1</a></li>
+            <li><a href="#section42">Section 4-2</a></li>                     
+          </ul>
+        </li>-->
+      </ul>
+    </nav>
+    </div>
+    <div class="col-xs-9 ">
+      <div id="section1" class="ais">    
+        <p id="title">What is Binary Search ?</p>
+        <div class="contain">
+          <p>&emsp;&emsp;&emsp;Binary Search is a technique to search an element in the list using the divide and conquer technique. It is a very fast and efficient searching technique. This type of technique is used in the case of sorted lists. In this method, to search an element you might compare that respective element present in the center of the list and if it’s same then the search is successfully finished and if not, then the list is divided into two parts:  one from 0th element to the centered element and other from the centered element to the last element.</p>
+          <p>&emsp;&emsp;&emsp;The time and space complexity for binary search is: <br> •	Time complexity (Best Case) : O(1) <br>• Time complexity (Worst Case) : O(log n) <br>•	Time complexity (Average Case) : O(log n) <br> •	Space complexity : O(1) </p>
+        </div>
+      </div>
+      <div id="section2"> 
+        <p id="title">Algorithm :</p>
+        <div class="contain" > 
+          <p> Binary Search Algorithm is as follows: <br>
+            <b>Step 1</b>:  Set BEG = LB, END = UB and MID = INT([BEG+END]/2) <br>
+            <b>Step 2</b>:  Repeat step 3 and 4 while BEG <= END and ARR[MID] != &emsp;&emsp;&emsp;ITEM <br> 
+            <b>Step 3</b>:  IF ITEM< ARR[MID] then: Set END = MID-1 <br>
+            &emsp;&emsp;&emsp;Else:<br>
+            &emsp;&emsp;&emsp;Set BEG = MID+1<br>
+ 
+            <b>Step 4</b>:  Set MID = INT(BEG+END)/2 <br>
+            <b>Step 5</b>:  IF ARR[MID] = ITEM then: Set LOC = MID <br>
+            &emsp;&emsp;&emsp;Else:<br>
+            &emsp;&emsp;&emsp;Set LOC = NULL<br>
+            <b>Step 6</b>:  Exit <br>
+          </p>
+        </div>
+      </div>        
+      <div id="section3"> 
+      <p id="title">Implementation of Binary Search :</p> <br> 
+        <div class="contain" >    
+          <p> <b>Step 1</b> - In the Given array, first you need to find the middle of the list using formula mid = (min + max)/2.  <br>
+              <b>Step 2</b> - If the searched element that is; say 50 is in the centered then the search is terminated, as we can see here it is not.<br>
+              <b>Step 3</b> - With the help of this algorithm we will try to find the value. First of all, you have to define two variables, low and high so low is 10 and high is 80. Now you have to find the mid element.so we will find the mid value of the formula. <br>
+              <b>Step 4</b> - We would know that in which half the searching would be done. <br>
+              <b>Step 5</b> - So we would go for the second half as the searching element that is; 60 is greater than the mid element that is 50. <br>
+              <b>Step 6</b> - The process repeat on until we find the element. <br>
+          </p>
+        </div>
+      </div>
+      <div id="section4">    
+      <p id="title">Flowchart : </p>  <br>    
+      <div >
+        <img src={% static "binary.gif" %}>
+      </div>
+      </div>
+      <div id="section5">  
+      <p id="title">Example demonstrating Binary search :</p>  
+      <div class="contain">      
+        <p>Consider the following example containing 8 sorted array elements.<br>
+                
+                <table>
+                  <tr>
+                    <th>0</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td>20</td>
+                    <td>30</td>
+                    <td>40</td>
+                    <td>50</td>
+                    <td>60</td>
+                    <td>70</td>
+                    <td>80</td>
+                  </tr>
+                </table>
 
-  <form method="POST" action="/{{ req }}/">
-    {% csrf_token %}
+                Element to search is 50.<br>
+                
 
-    <input onclick="myFunction()" id="asd" />
+                <br><a id="bold"> Pass 1:- </a> <br>
+                Find mid<br>
+                mid = (beg + end)/2 mid = (1+8)/2<br>
+                mid = 4<br>
+                Compare A[mid] with 50 <br>
+                <table>
+                  <tr>
+                    <th>0</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td>20</td>
+                    <td>30</td>
+                    <td style="color:red;">40</td>
+                    <td>50</td>
+                    <td>60</td>
+                    <td>70</td>
+                    <td>80</td>
+                  </tr>
+                </table>
+                Red is mid, so mid is 40.<br>
+                As A[mid] ! = 50 & 50 > A[mid]<br>
+                So proceed searching in the upper half. <br>
+                Set, beg = mid + 1 beg = 4 + 1<br>
+                beg = 5<br>
 
-    <!-- <button type="submit" class="btn btn-primary btn-lg">Submit</button> -->
-    <h3>Enter Element you want to find:</h3>
-    <input type="number" name="textfield" />
-    <button type="submit" name="sub" id="sub" class="btn btn-primary btn-lg">
-      Submit
-    </button>
-    <input type="hidden" />
+
+                <br><a id="bold"> Pass 2:- </a><br>
+                Find mid<br>
+                mid = (beg + end)/2 mid = (5+8)/2<br>
+                mid = 6<br>
+                Compare A[mid] with 50<br>
+                <table>
+                  <tr>
+                    <th>0</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td>20</td>
+                    <td>30</td>
+                    <td>40</td>
+                    <td>50</td>
+                    <td style="color:red;">60</td>
+                    <td>70</td>
+                    <td>80</td>
+                  </tr>
+                </table>
+
+                Red is mid, so mid is 60.<br>
+                As A[mid] ! = 50 & 50 < A[mid]<br>
+                So proceed searching in the lower half.<br> Set,
+                end = mid - 1 end = 6 - 1<br>
+                end = 5<br>
+
+
+                <br><a id="bold"> Pass 3:- </a><br>
+                Find mid<br>
+                mid = (beg + end)/2<br>
+                mid = (5+5)/2 mid = 5<br>
+                Compare A[mid] with 50
+                <br>
+                <table>
+                  <tr>
+                    <th>0</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td>20</td>
+                    <td>30</td>
+                    <td>40</td>
+                    <td style="color:red;">50</td>
+                    <td>60</td>
+                    <td>70</td>
+                    <td>80</td>
+                  </tr>
+                </table>
+                Red is mid, so mid is 50. As A[mid] = 50<br>
+                So, print “Search is successful”.<br>
+
+                Therefore here the given element 50 is found at 5th location.<br>
+
+        </p>
+      </div>
+      </div>
+      <div id="section6">    
+        <p id="title">Practise : </p>  <br>    
+        <form method="POST" action="/{{ req }}/">
+          <div class="contain" >
+          {% csrf_token %}
+            <p id="bold"> Enter Elements in below array -</p>
+    
+          </div>
+        </br>
+        <input onclick="myFunction()" id ="asd" class="text" placeholder="arr(0)"><br>
+        <div class="contain" >
+    
+          <p id="bold"> Enter Element you want to find -</p>
+
+    
+    
+          <input type="text" name="textfield"  onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+          <button type="submit" name="sub" id="sub" class="btn btn-primary btn-lg">
+            Submit
+          </button>
+          <input type="hidden" />
+    </div>
   </form>
+      </div>
+     </div>
+    </div>
+  </div>
+</div>
+<!-- Footer -->
+<footer class="text-center">
+  
+    
+  </a><br><br>
+  <p> Make your-self perfect. Connect us <a href="https://coderegion.herokuapp.com/" data-toggle="tooltip" title="Visit Code_Region">www.coderegion.herokuapp.com/</a></p> 
+</footer>
+<script>
+// When the user scrolls down 50px from the top of the document, resize the header's font size
+window.onscroll = function() {scrollFunction()};
 
-  <script>
+function scrollFunction() {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    document.getElementById("header").style.width = "39rem";
+  } else {
+    document.getElementById("header").style.width = "100%";
+  }
+ 
+}
+
+</script>   
+      <script>
     let val = 0;
 
     function myFunction() {
       const newinput = document.createElement("input");
       newinput.type = "text";
       newinput.setAttribute("id", "asd");
+      newinput.setAttribute('class', "text");
+      newinput.setAttribute('placeholder', `arr ${val}`);
       newinput.setAttribute("onclick", "myFunction()");
 
       const old = document.getElementById("asd");
@@ -46,6 +417,7 @@
       val = val + 1;
       old.setAttribute("id", val);
       old.setAttribute("name", val);
+      newinput.setAttribute('placeholder', `arr ${val}`);
       old.setAttribute("onclick", "");
       const sub = document.getElementById("sub");
       sub.setAttribute("value", val);
@@ -55,6 +427,11 @@
       newNode;
     }
   </script>
+
 </body>
 
+
 </html>
+
+
+         
