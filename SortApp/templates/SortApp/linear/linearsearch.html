@@ -183,7 +183,7 @@ text-transform:uppercase;
               
               {% if req != None %}
               
-                <p id="bold">Elememts found  -  {{array.q}} </p>
+                <p id="bold">Elememts found {{key}} at {{req}}<sup>th</sup> position </p>
               {% endif %}
           <p id="bold">Your Array  </p>
           </div>
@@ -193,11 +193,17 @@ text-transform:uppercase;
               <thead>
                 <tr>
                 
-                  {% for col in array %}
-
-                      <input id ="asd" class="text" value="{{col}}">
-                  {% endfor %}
-      
+                  
+                  {% with boole="true" %}
+                  {% for value in array %}
+                   {% if  value != key and boole != "true" %}
+                        <input id ="asd" class="text" value="{{value}}" style="color:green;" disabled>
+                        {% with boole="false" %}
+                        {% endwith %}
+                        {% endif %}
+                        <input id ="a" class="text" value="{{value}}" style="color:red;" disabled> 
+                    {% endfor %}
+                  {% endwith %}
                 </tr>
               </thead>
             </table>
@@ -208,14 +214,9 @@ text-transform:uppercase;
         <p id="title">Program : </p>  <br>  
         
           <div class="contain" >
-          {% csrf_token %}
-            
-          <p id="bold">  </p>
+          
           </div>
          
-          
-            
-        
         
       </div>
     </div>

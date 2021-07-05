@@ -44,9 +44,10 @@ def binaryview(request):
         return render(request, 'SortApp/binary/binaryview.html', context)
     if request.method == 'POST':
         arr = element_to_array(request.POST)
+        array = arr
         key = int(request.POST.get('textfield'))
         value = binarySearch(arr,key)
-        return render(request, 'SortApp/binary/binraysearch.html', {'req': value})
+        return render(request, 'SortApp/binary/binraysearch.html', {'req': value,'key':key,'array':array})
     else:
         return render(request, 'SortApp/binary/binaryview.html', {'req': 'binaryview'})
 

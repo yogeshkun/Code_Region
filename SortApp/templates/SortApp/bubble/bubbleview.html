@@ -1,43 +1,545 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SortApp</title>
-  <!-- CSS only -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-  <!-- JavaScript Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Code_Region</title>
+	<!-- CSS only -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Averia+Libre:wght@300&family=Sora:wght@200&display=swap" rel="stylesheet">
+<style>
+body {
+    position: relative;
+  }
+
+#myScrollspy{
+  position :fixed;
+  top :130px;
+}
+  #section1,#section2,#section3,#section4,#section5,#section6 {
+ -webkit-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+  height:100%;
+  font-family : 'Roboto+Mono';
+  padding-top: 60px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+  padding-left: 50px;
+  background-color:lightblue;
+  margin-bottom:10px;
+  }
+  #title{
+    text-align: justify;
+    font-size : 40px;
+
+  }
+.contain{
+  font-size:30px;
+  font-family: 'Alegreya Sans', sans-serif;
+}
+  @media screen and (max-width: 810px) {
+    #section1, #section2, #section3, #section4, #section4  {
+      
+    }
+  }
+
+/* Style the header */
+header {
+  background-color: #2B2B2B;
+  padding: 30px;
+  text-align: center;
+  
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 88px;
+  
+  font-family : 'Roboto+Mono';
+  -webkit-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+  color: white;
+  text-align: center;
+  font-size: 30px; 
+  font-weight: bold;
+  width: 100%;
+  transition: 0.2s;
+}
+
+div.col-sm-9 div {
+    height: 250px;
+    font-size: 28px;
+  }
+.header__content-text {
+  text-align: center;
+  padding: 15px 20px;
+}
+
+.page__content-container {
+  
+  margin-top: 15rem;
+}
+
+table,th,tr,td{
+  text-align:center;
+  border: 1px solid black;
+  
+}
+table{
+  width: 100%;
+}
+#bold{
+  font-weight: bold;
+}
+.ais{
+  background-color:lightblue;
+}
+.square {
+  height: 90px;
+  width: 300px;
+  background-color: lightblue;
+
+}
+.text{
+  background-color: yellow;
+margin-bottom: 5px;
+box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.5);
+font-family: 'ProximaNova-Bold';
+border: 0;
+width: 100px;
+height:100px;
+text-align: center;
+text-transform: capitalize;
+padding:15px;
+padding-left:21px;
+text-transform:uppercase;
+
+}
+ input:focus, textarea:focus, select:focus{
+       
+    }
+    footer {
+    background-color: #2d2d30;
+    color: #f5f5f5;
+    padding: 32px;
+  }
+  footer a {
+    color: #f5f5f5;
+  }
+  footer a:hover {
+    color: #777;
+    text-decoration: none;
+  }
+</style>
 </head>
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="20">
+<header id="header">Welcome to Bubble Sort</header>
 
-<body>
-  <h1>Welcome To {{ req }}</h1>
+<div class="container">
+  <div class="row page__content-container">
+    <div class="col-xs-3">
+        <nav class="" id="myScrollspy">
+      <ul class="nav nav-pills nav-stacked" style="font-family: 'Sora', sans-serif;font-size:20px;">
+        <li class="active"><a href="#section1">Introduction - </a></li>
+        <li><a href="#section2">Algorithm -</a></li>
+        
+        <li><a href="#section4">Flowchart -</a></li>
+        <li><a href="#section5">Example -</a></li>
+        <li><a href="#section6">Practise -</a></li>
+        <!--<li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Section 4 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#section41">Section 4-1</a></li>
+            <li><a href="#section42">Section 4-2</a></li>                     
+          </ul>
+        </li>-->
+      </ul>
+    </nav>
+    </div>
+    <div class="col-xs-9 ">
+      <div id="section1" class="ais">    
+        <p id="title">What is Bubble Sort ?</p>
+        <div class="contain">
+          <p>&emsp;&emsp;&emsp;Bubble sort is a sorting algorithm that compares two adjacent elements and swaps them if they are not in the intended order. It lies in the category of exchange sorts, which is the most efficient general-purpose sort. It follows the technique of replacing the first index with the more minor value present within the array and then keeps it repeating until it is sorted in the correct order. The value of the array has to be assigned to the array first before starting the sorting</p>
+          <p>&emsp;&emsp;&emsp;The time and space complexity for bubble sort is: <br> •	Time complexity (Best Case) : O(n2) <br>•	Time complexity (Worst Case) : O(n2) <br>•	Time complexity (Average Case) : O(n)<br>•	Space complexity : O(1) </p>
+        </div>
+      </div>
+      <div id="section2"> 
+        <p id="title">Algorithm :</p>
+        <div class="contain" > 
+          <p> Bubble sort Algorithm is as follows: <br>
+            <b>Step 1</b>:  Repeat Step 2 For i = 0 to N-1 <br>
+            <b>Step 2</b>:  Repeat For J = i + 1 to N – I <br> 
+            <b>Step 3</b>:  IF A[J] > A[i] <br>
+            &emsp;&emsp;&emsp;SWAP A[J] and A[i]<br>
+            &emsp;&emsp;&emsp;Set BEG = MID+1<br>
+            &emsp;&emsp;&emsp;[END OF OUTER LOOP<br>
+            <b>Step 4</b>:  Exit <br>
+          </p>
+        </div>
+      </div>        
+      
+      <div id="section4">    
+      <p id="title">Flowchart : </p>  <br>    
+      <div >
+        <img src={% static "binary.gif" %}>
+      </div>
+      </div>
+      <div id="section5">  
+      <p id="title">	Example demonstrating Bubble sort:</p>  
+      <div class="contain">      
+        <p>Consider the following example containing 8 sorted array elements.<br>
+                <br><a id="bold"> Step 1:- </a> <br>
+                Compare the first two elements '4' and '7'.<br>
+                No switch is necessary because '4' is smaller than '7'.<br>
+                <table>
+                  <tr>
+                    <th>0</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8</th>
+                    <th>9</th>
+                  </tr>
+                  <tr>
+                    <td style="color:red;">4</td>
+                    <td style="color:red;">7</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>10</td>
+                    <td>8</td>
+                    <td>3</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>9</td>
+                  </tr>
+                </table>
+                
 
-  <form method="POST" action="/{{ req }}/">
-    {% csrf_token %}
+                <br><a id="bold"> Step 2:- </a><br>
+                Compare second and third elements '7' and '1'.<br>
+                Switch, because '7' is larger than '2'.<br>
+                
+                <table>
+                  <tr>
+                    <th>0</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8</th>
+                    <th>9</th>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td style="color:red;">2</td>
+                    <td style="color:red;">7</td>
+                    <td >1</td>
+                    <td>10</td>
+                    <td>8</td>
+                    <td>3</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>9</td>
+                  </tr>
+                </table>
 
-    <input onclick="myFunction()" id="asd" />
+                <br><a id="bold"> Step 3:- </a><br>
+                Compare third and fourth elements '7' and '1'.<br>
+                They had to switch.<br>
+              
+                <table>
+                  <tr>
+                    <th>0</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8</th>
+                    <th>9</th>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>2</td>
+                    <td style="color:red;">1</td>
+                    <td style="color:red;">7</td>
+                    <td>10</td>
+                    <td>8</td>
+                    <td>3</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>9</td>
+                  </tr>
+                </table>
+                <br><a id="bold"> Step 4:- </a><br>
+                Compare fourth and fifth elements '7' and '10'.<br>
+                No switch, because they are in order.<br>
+              
+                <table>
+                  <tr>
+                    <th>0</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8</th>
+                    <th>9</th>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td style="color:red;">7</td>
+                    <td style="color:red;">10</td>
+                    <td>8</td>
+                    <td>3</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>9</td>
+                  </tr>
+                </table>
+                <br><a id="bold"> Step 5:- </a><br>
+                Compare fifth and sixth elements '10' and '8'.<br>
+                They had to switch.<br>
+              
+                <table>
+                  <tr>
+                    <th>0</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8</th>
+                    <th>9</th>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td >7</td>
+                    <td style="color:red;">8</td>
+                    <td style="color:red;">10</td>
+                    <td>3</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>9</td>
+                  </tr>
+                </table>
+                <br><a id="bold"> Step 6:- </a><br>
+                Compare sixth and seventh elements '10' and '3'.<br>
+                They had to switch.<br>
+              
+                <table>
+                  <tr>
+                    <th>0</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8</th>
+                    <th>9</th>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td >7</td>
+                    <td>8</td>
+                    <td style="color:red;">3</td>
+                    <td style="color:red;">10</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>9</td>
+                  </tr>
+                </table>
+                <br><a id="bold"> Step 7:- </a><br>
+                Compare seventh and eighth elements '10' and '5'.<br>
+                They had to switch.<br>
+              
+                <table>
+                  <tr>
+                    <th>0</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8</th>
+                    <th>9</th>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td >7</td>
+                    <td>8</td>
+                    <td>3</td>
+                    <td style="color:red;">5</td>
+                    <td style="color:red;">10</td>
+                    <td>6</td>
+                    <td>9</td>
+                  </tr>
+                </table>
+                <br><a id="bold"> Step 8:- </a><br>
+                Compare eighth and ninth elements '10' and '6'.<br>
+                They had to switch.<br>
+              
+                <table>
+                  <tr>
+                    <th>0</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8</th>
+                    <th>9</th>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td >7</td>
+                    <td>8</td>
+                    <td>3</td>
+                    <td >5</td>
+                    <td style="color:red;">6</td>
+                    <td style="color:red;">10</td>
+                    <td>9</td>
+                  </tr>
+                </table>
+                <br><a id="bold"> Step 9:- </a><br>
+                Compare ninth and tenth elements '10' and '9'.<br>
+                They had to switch. So, now you see that '10', the largest element has "bubbled" to the last place in the array.<br>
+              
+                <table>
+                  <tr>
+                    <th>0</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8</th>
+                    <th>9</th>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td >7</td>
+                    <td>8</td>
+                    <td>3</td>
+                    <td >5</td>
+                    <td >6</td>
+                    <td style="color:red;">9</td>
+                    <td style="color:red;">10</td>
+                  </tr>
+                </table>
+                
 
-    <!-- <button type="submit" class="btn btn-primary btn-lg">Submit</button> -->
-    <h3>Enter Element you want to find:</h3>
-    <button type="submit" name="sub" id="sub" class="btn btn-primary btn-lg">
-      Submit
-    </button>
-    <input type="hidden" />
+        </p>
+      </div>
+      </div>
+      <div id="section6">    
+        <p id="title">Practise : </p>  <br>    
+        <form method="POST" action="/{{ req }}/">
+          <div class="contain" >
+          {% csrf_token %}
+            <p id="bold"> Enter Elements in below array -</p>
+    
+          </div>
+        </br>
+        <input onclick="myFunction()" id ="asd"  class="text" placeholder="arr(0)"><br>
+        <div class="contain" >
+    
+          <p id="bold"> Enter Element you want to find -</p>
+
+    
+          
+          
+          <button type="submit" name="sub" id="sub" class="btn btn-primary btn-lg">
+            Submit
+          </button>
+          <input type="hidden" />
+    </div>
   </form>
+      </div>
+     </div>
+    </div>
+  </div>
+</div>
+<!-- Footer -->
+<footer class="text-center">
+  
+    
+  </a><br><br>
+  <p> Make your-self perfect. Connect us <a href="https://coderegion.herokuapp.com/" data-toggle="tooltip" title="Visit Code_Region">www.coderegion.herokuapp.com/</a></p> 
+</footer>
+<script>
+// When the user scrolls down 50px from the top of the document, resize the header's font size
+window.onscroll = function() {scrollFunction()};
 
-  <script>
+function scrollFunction() {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    document.getElementById("header").style.width = "39rem";
+  } else {
+    document.getElementById("header").style.width = "100%";
+  }
+ 
+}
+
+</script>   
+      <script>
     let val = 0;
 
     function myFunction() {
       const newinput = document.createElement("input");
       newinput.type = "text";
       newinput.setAttribute("id", "asd");
+      newinput.setAttribute('class', "text");
+      newinput.setAttribute('placeholder', `arr ${val}`);
       newinput.setAttribute("onclick", "myFunction()");
 
       const old = document.getElementById("asd");
@@ -45,6 +547,7 @@
       val = val + 1;
       old.setAttribute("id", val);
       old.setAttribute("name", val);
+      newinput.setAttribute('placeholder', `arr ${val}`);
       old.setAttribute("onclick", "");
       const sub = document.getElementById("sub");
       sub.setAttribute("value", val);
@@ -54,6 +557,11 @@
       newNode;
     }
   </script>
+
 </body>
 
+
 </html>
+
+
+         

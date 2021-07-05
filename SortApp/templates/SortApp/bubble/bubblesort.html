@@ -1,6 +1,274 @@
-<html>
-<head></head>
-<body>
-    {{ req }}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Code_Region</title>
+	<!-- CSS only -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Averia+Libre:wght@300&family=Sora:wght@200&display=swap" rel="stylesheet">
+<style>
+body {
+    position: relative;
+  }
+
+#myScrollspy{
+  position :fixed;
+  top :130px;
+}
+  #section1,#section2,#section3,#section4,#section5,#section6,#section7 {
+ -webkit-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+  height:100%;
+  font-family : 'Roboto+Mono';
+  padding-top: 60px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+  padding-left: 50px;
+  background-color:lightblue;
+  margin-bottom:10px;
+  }
+  #title{
+    text-align: justify;
+    font-size : 40px;
+
+  }
+.contain{
+  font-size:30px;
+  font-family: 'Alegreya Sans', sans-serif;
+}
+  @media screen and (max-width: 810px) {
+    #section1, #section2, #section3, #section4, #section4  {
+      
+    }
+  }
+
+/* Style the header */
+header {
+  background-color: #2B2B2B;
+  padding: 30px;
+  text-align: center;
+  
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 88px;
+  
+  font-family : 'Roboto+Mono';
+  -webkit-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+  color: white;
+  text-align: center;
+  font-size: 30px; 
+  font-weight: bold;
+  width: 100%;
+  transition: 0.2s;
+}
+
+div.col-sm-9 div {
+    height: 250px;
+    font-size: 28px;
+  }
+.header__content-text {
+  text-align: center;
+  padding: 15px 20px;
+}
+
+.page__content-container {
+  
+  margin-top: 15rem;
+}
+
+table,th,tr,td{
+  text-align:center;
+  border: 1px solid black;
+  
+}
+table{
+  width: 100%;
+}
+#bold{
+  font-weight: bold;
+}
+.ais{
+  background-color:lightblue;
+}
+.square {
+  height: 90px;
+  width: 300px;
+  background-color: lightblue;
+
+}
+.text{
+  background-color: yellow;
+margin-bottom: 5px;
+box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.5);
+font-family: 'ProximaNova-Bold';
+border: 0;
+width: 100px;
+height:100px;
+text-align: center;
+text-transform: capitalize;
+padding:15px;
+padding-left:21px;
+text-transform:uppercase;
+
+}
+ input:focus, textarea:focus, select:focus{
+       
+    }
+    footer {
+    background-color: #2d2d30;
+    color: #f5f5f5;
+    padding: 32px;
+  }
+  footer a {
+    color: #f5f5f5;
+  }
+  footer a:hover {
+    color: #777;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="20">
+<header id="header">Welcome to Bubble Sort</header>
+
+<div class="container">
+  <div class="row page__content-container">
+    <div class="col-xs-3">
+      <nav class="" id="myScrollspy">
+        <ul class="nav nav-pills nav-stacked" style="font-family: 'Sora', sans-serif;font-size:20px;">
+          <li  class="active"><a href="#section6">Practise -</a></li>
+          <li><a href="#section7">Program - </a></li>
+        <!--<li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Section 4 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#section41">Section 4-1</a></li>
+            <li><a href="#section42">Section 4-2</a></li>                     
+          </ul>
+        </li>-->
+        </ul>
+      </nav>
+    </div>
+    <div class="col-xs-9 ">
+     <div id="section6">    
+        <p id="title">Practise : </p>  <br>  
+        <form method="POST" action="/{{ req }}/">
+          <div class="contain" >
+          {% csrf_token %}
+            
+
+          </br>
+              
+              
+              
+              
+              
+            
+          <p id="bold">Your sorted array  </p>
+          </div>
+          </br>
+          
+            <table border='1'>
+              <thead>
+                <tr>
+                
+                  
+                  {% with boole="true" %}
+                  {% for value in req %}
+                   {% if  value != key and boole != "true" %}
+                        <input id ="asd" class="text" value="{{value}}" style="color:green;" disabled>
+                        {% with boole="false" %}
+                        {% endwith %}
+                        {% endif %}
+                        <input id ="a" class="text" value="{{value}}" style="color:red;" disabled> 
+                    {% endfor %}
+                  {% endwith %}
+                </tr>
+              </thead>
+            </table>
+        
+        </form>
+      </div>
+      <div id="section7">    
+        <p id="title">Program : </p>  <br>  
+        
+          <div class="contain" >
+          
+          </div>
+         
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Footer -->
+<footer class="text-center">
+  
+    
+  </a><br><br>
+  <p> Make your-self perfect. Connect us <a href="https://coderegion.herokuapp.com/" data-toggle="tooltip" title="Visit Code_Region">www.coderegion.herokuapp.com/</a></p> 
+</footer>
+<script>
+// When the user scrolls down 50px from the top of the document, resize the header's font size
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    document.getElementById("header").style.width = "39rem";
+  } else {
+    document.getElementById("header").style.width = "100%";
+  }
+ 
+}
+
+</script>   
+      <script>
+    let val = 0;
+
+    function myFunction() {
+      const newinput = document.createElement("input");
+      newinput.type = "text";
+      newinput.setAttribute("id", "asd");
+      newinput.setAttribute('class', "text");
+      
+      newinput.setAttribute("onclick", "myFunction()");
+
+      const old = document.getElementById("asd");
+      insertAfter(newinput, old);
+      val = val + 1;
+      old.setAttribute("id", val);
+      old.setAttribute("name", val);
+     
+      old.setAttribute("onclick", "");
+      const sub = document.getElementById("sub");
+      sub.setAttribute("value", val);
+    }
+    function insertAfter(newNode, currentNode) {
+      currentNode.parentNode.insertBefore(newNode, currentNode.nextSibling);
+      newNode;
+    }
+  </script>
+
 </body>
+
+
 </html>

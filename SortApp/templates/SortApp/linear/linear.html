@@ -149,7 +149,7 @@ text-transform:uppercase;
 </style>
 </head>
 <body data-spy="scroll" data-target="#myScrollspy" data-offset="20">
-<header id="header">Welcome to {{ req }}</header>
+<header id="header">Welcome to Linear Search</header>
 
 <div class="container">
   <div class="row page__content-container">
@@ -452,27 +452,3 @@ function scrollFunction() {
 
 
 </html>
-<p id="bold"> You have searched - {{key}} </p>
-
-              {% csrf_token %}
-              {% if req == None %}
-                No elements found
-              {% endif %}
-              
-              {% if req != None %}
-              
-                <p id="bold">Output -  {{array.q}} </p>
-              {% endif %}
-   
-               </br>
-            <table border='1'>
-              <thead>
-                <tr>
-                  {% for col in array %}
-                  
-                      <input id ="asd" class="text" value="{{col}}">
-                  {% endfor %}
-      
-                </tr>
-              </thead>
-            </table>
