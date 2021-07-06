@@ -1,4 +1,5 @@
 {% load static %}
+{% load vari %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +25,9 @@
 body {
     position: relative;
   }
-
+#a{
+    color:red;
+}
 #myScrollspy{
   position :fixed;
   top :130px;
@@ -124,6 +127,7 @@ font-family: 'ProximaNova-Bold';
 border: 0;
 width: 100px;
 height:100px;
+
 text-align: center;
 text-transform: capitalize;
 padding:15px;
@@ -149,7 +153,7 @@ text-transform:uppercase;
 </style>
 </head>
 <body data-spy="scroll" data-target="#myScrollspy" data-offset="20">
-<header id="header">Welcome to Binary Search</header>
+<header id="header">Welcome to Binary search</header>
 
 <div class="container">
   <div class="row page__content-container">
@@ -169,7 +173,7 @@ text-transform:uppercase;
       </nav>
     </div>
     <div class="col-xs-9 ">
-     <div id="section6">    
+     <div id="section6">
         <p id="title">Practise : </p>  <br>  
         <form method="POST" action="/{{ req }}/">
           <div class="contain" >
@@ -183,7 +187,7 @@ text-transform:uppercase;
               
               {% if req != None %}
               
-                <p id="bold">Elememts found {{key}} at {{req}}<sup>th</sup> position </p>
+                <p id="bold">Elememts found {{key}} at {{req}}<sup>th</sup> position  </p>
               {% endif %}
           <p id="bold">Your Array  </p>
           </div>
@@ -192,18 +196,20 @@ text-transform:uppercase;
             <table border='1'>
               <thead>
                 <tr>
-                
-                  
-                  {% with boole="true" %}
+                    {% update_variable "true" as boole %}
                   {% for value in array %}
-                   {% if  value != key and boole != "true" %}
-                        <input id ="asd" class="text" value="{{value}}" style="color:green;" disabled>
-                        {% with boole="false" %}
-                        {% endwith %}
-                        {% endif %}
-                        <input id ="a" class="text" value="{{value}}" style="color:red;" disabled> 
-                    {% endfor %}
-                  {% endwith %}
+                   {% if  value == key and boole  == "true" %}
+                        
+                        <input type="text" style = 'color:red;' class="text" value="{{value}}" >
+                        
+                        
+                        {% update_variable "false" as boole %}
+                    {% else %}
+                        <input type="text" class="text"  value="{{value}}">
+                    {% endif %}
+                  {% endfor %}
+
+      
                 </tr>
               </thead>
             </table>
@@ -214,9 +220,14 @@ text-transform:uppercase;
         <p id="title">Program : </p>  <br>  
         
           <div class="contain" >
-          
+          {% csrf_token %}
+            
+          <p id="bold">  </p>
           </div>
          
+          
+            
+        
         
       </div>
     </div>
