@@ -37,7 +37,6 @@ def linearview(request):
     else:
         return render(request, 'SortApp/linear/linear.html', {'req': 'linearview'})
 
-
 def binaryview(request):
     if request.method == 'GET':
         context = {'req': request.GET.get('data')}
@@ -45,12 +44,13 @@ def binaryview(request):
     if request.method == 'POST':
         arr = element_to_array(request.POST)
         array = arr
+        if arr != sorted(arr):
+            return render(request, 'SortApp/binary/binaryview.html', {'req': 'binaryview', 'error':  True})
         key = int(request.POST.get('textfield'))
-        value = binarySearch(arr,key)
-        return render(request, 'SortApp/binary/binraysearch.html', {'req': value,'key':key,'array':array})
+        value = binarySearch(arr, key)
+        return render(request, 'SortApp/binary/binraysearch.html', {'req': value, 'key': key, 'array': array})
     else:
         return render(request, 'SortApp/binary/binaryview.html', {'req': 'binaryview'})
-
 
 def bubblesortview(request):
     if request.method == 'GET':
@@ -74,8 +74,6 @@ def mergesortview(request):
         return render(request, 'SortApp/merge/mergesort.html', {'req': arr})
     else:
         return render(request, 'SortApp/merge/mergeview.html', {'req': 'mergesortview'})
-
-
 
 def insertionsortview(request):
     if request.method == 'GET':

@@ -21,7 +21,7 @@ def binarySearch(arr, key):
         mid = (low + high) // 2
 
         if key == arr[mid]:
-            return mid + 1
+            return mid 
         elif key > arr[mid]:
             low = mid + 1
         elif key < arr[mid]:
