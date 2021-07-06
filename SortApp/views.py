@@ -67,13 +67,13 @@ def bubblesortview(request):
 def mergesortview(request):
     if request.method == 'GET':
         context = {'req': request.GET.get('data')}
-        return render(request, 'SortApp/merge/mergeview.html', context)
+        return render(request, 'SortApp/merge/mergesort.html', context)
     if request.method == 'POST':
         arr = element_to_array(request.POST)
-        arr = mergeSort(arr)
-        return render(request, 'SortApp/merge/mergesort.html', {'req': arr})
+        value = mergeSort(arr)
+        return render(request, 'SortApp/merge/mergeview.html', {'req': value})
     else:
-        return render(request, 'SortApp/merge/mergeview.html', {'req': 'mergesortview'})
+        return render(request, 'SortApp/merge/mergesort.html', {'req': 'mergesortview'})
 
 def insertionsortview(request):
     if request.method == 'GET':
