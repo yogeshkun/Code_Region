@@ -1,54 +1,107 @@
+
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>SortApp</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Code_Region</title>
 	<!-- CSS only -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+		  rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<!-- JavaScript Bundle with Popper -->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+			integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
-
 <body>
+
+<header>
+  <!-- Intro settings -->
+  <style>
+    /* Default height for small devices */
+    #intro-example {
+      height: 400px;
+      background-size : cover;
+    }
+
+    /* Height for devices larger than 992px */
+    @media (min-width: 992px) {
+      #intro-example {
+        height: 600px;
+      }
+    }
+  </style>
+
+  <!-- Navbar -->
+  
+  <!-- Navbar -->
+
+  <!-- Background image -->
+  <div
+    id="intro-example"
+    class="p-5 text-center bg-image"
+    style="background-image: url('{%static "bg.jpeg" %}');"
+  >
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.7);">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-white">
+          <h1 class="mb-3">Code Region</h1>
+          <h5 class="mb-4">Best & free guide of responsive web design</h5>
+          <form method="GET" action="{% url 'bubblesortview' %}">
+		  <button
+            class="btn btn-outline-light btn-lg m-2"
+            role="button"
+            rel="nofollow"
+            target="_blank"
+			value="bubblesortview" name="data"
+            > Bubble Sort </button
+          >
+		  </form>
+		  <form method="GET" action="{% url 'mergesortview' %}">
+          <button
+            class="btn btn-outline-light btn-lg m-2"
+            
+            role="button"
+            rel="nofollow"
+            target="_blank"
+			value="mergesortview" name="data"
+            >Merge Sort</button
+          >
+		  </form>
+		  <form method="GET" action="{% url 'insertionsortview' %}">
+		  <button
+            class="btn btn-outline-light btn-lg m-2"
+            
+            role="button"
+            rel="nofollow"
+            target="_blank"
+			 value="insertionsortview" name="data"
+            >Insertion Sort</button
+          >
+		  </form>
+		  <form method="GET" action="{% url 'selectionsortview' %}">
+		  <button
+            class="btn btn-outline-light btn-lg m-2"
+            
+            role="button"
+            rel="nofollow"
+            target="_blank"
+			value="selectionsortview" name="data"
+            >Selection Sort</button
+          >
+         </form>
+          <br><br><br><br><br><br>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Background image -->
+</header>
+
+
+
 	
-
-	<form method="GET" action="{% url 'bubblesortview' %}">
-		{% csrf_token %}
-		<button type="submit" value="bubblesortview" name="data" class="btn btn-primary btn-lg">
-			Bubble Sort
-		</button>
-	</form>
-	<br>
-
-	<form method="GET" action="{% url 'mergesortview' %}">
-		{% csrf_token %}
-		<button type="submit" value="mergesortview" name="data" class="btn btn-primary btn-lg">
-			Merge Sort
-		</button>
-	</form>
-	<br>
-
-	<form method="GET" action="{% url 'insertionsortview' %}">
-		{% csrf_token %}
-		<button type="submit" value="insertionsortview" name="data" class="btn btn-primary btn-lg">
-			Insertion Sort
-		</button>
-	</form>
-	<br>
-
-	<form method="GET" action="{% url 'insertionsortview' %}">
-		{% csrf_token %}
-		<button type="submit" value="selectionsortview" name="data" class="btn btn-primary btn-lg">
-			Selection Sort
-		</button>
-	</form>
-	<br>
 </body>
-
 </html>
