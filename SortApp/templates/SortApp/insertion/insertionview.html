@@ -1,43 +1,384 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SortApp</title>
-  <!-- CSS only -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-  <!-- JavaScript Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Code_Region</title>
+	<!-- CSS only -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Averia+Libre:wght@300&family=Sora:wght@200&display=swap" rel="stylesheet">
+<style>
+body {
+    position: relative;
+  }
+
+#myScrollspy{
+  position :fixed;
+  top :130px;
+}
+  #section1,#section2,#section3,#section4,#section5,#section6 {
+ -webkit-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+  height:100%;
+  font-family : 'Roboto+Mono';
+  padding-top: 60px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+  padding-left: 50px;
+  background-color:lightblue;
+  margin-bottom:10px;
+  }
+  #title{
+    text-align: justify;
+    font-size : 40px;
+
+  }
+.contain{
+  font-size:30px;
+  font-family: 'Alegreya Sans', sans-serif;
+}
+  @media screen and (max-width: 810px) {
+    #section1, #section2, #section3, #section4, #section4  {
+      
+    }
+  }
+
+/* Style the header */
+header {
+  background-color: #2B2B2B;
+  padding: 30px;
+  text-align: center;
+  
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 88px;
+  
+  font-family : 'Roboto+Mono';
+  -webkit-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+  color: white;
+  text-align: center;
+  font-size: 30px; 
+  font-weight: bold;
+  width: 100%;
+  transition: 0.2s;
+}
+
+div.col-sm-9 div {
+    height: 250px;
+    font-size: 28px;
+  }
+.header__content-text {
+  text-align: center;
+  padding: 15px 20px;
+}
+
+.page__content-container {
+  
+  margin-top: 15rem;
+}
+
+table,th,tr,td{
+  text-align:center;
+  border: 1px solid black;
+  
+}
+table{
+  width: 100%;
+}
+#bold{
+  font-weight: bold;
+}
+.ais{
+  background-color:lightblue;
+}
+.square {
+  height: 90px;
+  width: 300px;
+  background-color: lightblue;
+
+}
+.text{
+  background-color: yellow;
+margin-bottom: 5px;
+box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.5);
+font-family: 'ProximaNova-Bold';
+border: 0;
+width: 100px;
+height:100px;
+text-align: center;
+text-transform: capitalize;
+padding:15px;
+padding-left:21px;
+text-transform:uppercase;
+
+}
+ input:focus, textarea:focus, select:focus{
+       
+    }
+    footer {
+    background-color: #2d2d30;
+    color: #f5f5f5;
+    padding: 32px;
+  }
+  footer a {
+    color: #f5f5f5;
+  }
+  footer a:hover {
+    color: #777;
+    text-decoration: none;
+  }
+</style>
 </head>
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="20">
+<header id="header">Welcome to Insertion Sort</header>
 
-<body>
-  <h1>Welcome To {{ req }}</h1>
+<div class="container">
+  <div class="row page__content-container">
+    <div class="col-xs-3">
+        <nav class="" id="myScrollspy">
+      <ul class="nav nav-pills nav-stacked" style="font-family: 'Sora', sans-serif;font-size:20px;">
+        <li class="active"><a href="#section1">Introduction - </a></li>
+        <li><a href="#section2">Algorithm -</a></li>
+        
+        <li><a href="#section4">Flowchart -</a></li>
+        <li><a href="#section5">Example -</a></li>
+        <li><a href="#section6">Practise -</a></li>
+        <!--<li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Section 4 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#section41">Section 4-1</a></li>
+            <li><a href="#section42">Section 4-2</a></li>                     
+          </ul>
+        </li>-->
+      </ul>
+    </nav>
+    </div>
+    <div class="col-xs-9 ">
+      <div id="section1" class="ais">    
+        <p id="title">What is Insertion Sort ?</p>
+        <div class="contain">
+          <p>&emsp;&emsp;&emsp;Insertion sort is the sorting mechanism where the sorted array is built having one item at a time. The insertion sort algorithm iterates through an input array and removes one element per iteration, finds the place the element belongs in the array, and then places it there. This process grows a sorted list from left to right. For a contiguous list, the primary costs are the comparisons to determine which part of the sorted portion must be shifted, and the assignments needed to accomplish that shifting of the sorted tail.</p>
+          <p>&emsp;&emsp;&emsp;The time and space complexity for bubble sort is: <br> •	Time complexity (Best Case) : O(n) <br>•	Time complexity (Worst Case) : O(n2) <br>•	Time complexity (Average Case) : O(n2) <br>•	Space complexity : O(1) </p>
+        </div>
+      </div>
+      <div id="section2"> 
+        <p id="title">Algorithm :</p>
+        <div class="contain" > 
+          <p> Insertion sort Algorithm is as follows: <br>
+            <b>Step 1</b>:  For i = 1 to n-1 <br>
+            <b>Step 2</b>:  Set temp = Array[i] <br> 
+            <b>Step 3</b>:  Set j = i – 1 <br>
+            <b>Step 4</b>:  while temp <=Array[j] <br>
+            &emsp;&emsp;&emsp;Set Array[j + 1] = Array[j] <br>
+            &emsp;&emsp;&emsp;Set j = j – 1 <br>
+            &emsp;&emsp;&emsp;[end of step 4] <br>
+            <b>Step 5</b>:  Set Array[j + 1] = temp <br>
+            &emsp;&emsp;&emsp;[end of step 1] <br>
+            <b>Step 6</b>:  STOP <br>
+          </p>
+        </div>
+      </div>        
+      
+      <div id="section4">    
+      <p id="title">Flowchart : </p>  <br>    
+      <div >
+        <img src={% static ".png" %}>
+      </div>
+      </div>
+      <div id="section5">  
+      <p id="title">	Example demonstrating Insertion sort:</p>  
+      <div class="contain">      
+        <p>Suppose you have the following array, which you have to sort. <br>
+                <table>
+                  <tr>
+                    <th>13</th>	
+                    <th>8</th>
+                    <th>2</th>
+                    <th>22</th>
+                    <th>10</th>
+                    <th>25</th>
+                  </tr>
+                </table>
+                In insertion sort, the first two elements are compared. <br>
+                As there are 6 elements in this array, so you will need 5 steps to sort it. <br>
+                <br><a id="bold"> Step 1:- </a> <br>
+                Since 8 is smaller than 11, it will change its place among themselves. <br>
+                <table>
+                  <tr>
+                    <td style="color:red;">8</td>
+                    <td style="color:red;">13</td>
+                    <th>2</th>
+                    <th>1</th>
+                    <th>10</th>
+                    <th>11</th>
+                  </tr>
+                </table>
+                <br><a id="bold"> Step 2:- </a><br>
+                Now, you will compare the next two elements (13 and 2). <br>
+                Since 2 is smaller than 13, it will change its place among themselves. <br>
+                <table>
+                  <tr>
+                    <th>8</th>
+                    <td style="color:red;">2</td>
+                    <td style="color:red;">13</td>
+                    <th>1</th>
+                    <th>10</th>
+                    <th>11</th>
+                  </tr>
+                </table>
+                After this, 8 and 2 will compare, 2 is smaller than 8, so it will change its place among themselves. <br>
+                <table>
+                  <tr>
+                    <td style="color:red;">2</td>
+                    <td style="color:red;">8</td>
+                    <th>13</th>
+                    <th>1</th>
+                    <th>10</th>
+                    <th>11</th>
+                  </tr>
+                </table>
+                <br><a id="bold"> Step 3:- </a><br>
+                Now, you will compare 13 and 1. <br>
+                Since 1 is smaller than 13, it will change its place among themselves. <br>
+                <table>
+                  <tr>
+                    <th>2</th>
+                    <th>8</th>
+                    <td style="color:red;">1</td>
+                    <td style="color:red;">13</td>
+                    <th>10</th>
+                    <th>11</th>
+                  </tr>
+                </table>
+                After this, 8 and 1 will compare, 1 is smaller than 8, so it will change its place among themselves. <br>
+                <table>
+                  <tr>
+                    <th>2</th>
+                    <td style="color:red;">1</td>
+                    <td style="color:red;">8</td>
+                    <th>13</th>
+                    <th>10</th>
+                    <th>11</th>
+                  </tr>
+                </table>
+                After this, 2 and 1 will compare, 1 is smaller than 2, so it will change its place among themselves. <br>
+                <table>
+                  <tr>
+                    <td style="color:red;">1</td>
+                    <td style="color:red;">2</td>
+                    <th>8</th>
+                    <th>13</th>
+                    <th>10</th>
+                    <th>11</th>
+                  </tr>
+                </table>
+                <br><a id="bold"> Step 4:- </a><br>
+                Now, you will compare 13 and 10.  <br>
+                Since 10 is smaller than 13, it will change its place among themselves. <br>
+                <table>
+                  <tr>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>8</th>
+                    <td style="color:red;">10</td>
+                    <td style="color:red;">13</td>
+                    <th>11</th>
+                  </tr>
+                </table>
+                <br><a id="bold"> Step 5:- </a><br>
+                Now, you will compare 13 and 11. <br>
+                Since 11 is smaller than 13, it will change its place among themselves. <br>
+                <table>
+                  <tr>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>8</th>
+                    <th>10</th>
+                    <td style="color:red;">11</td>
+                    <td style="color:red;">13</td>
+                  </tr>
+                </table>
+                Finally the entire array is a sorted array. <br>
+        </p>
+      </div>
+      </div>
+      <div id="section6">    
+        <p id="title">Practise : </p>  <br>    
+        <form method="POST" action="/{{ req }}/">
+          <div class="contain" >
+          {% csrf_token %}
+            <p id="bold"> Enter Elements in below array -</p>
+    
+          </div>
+        </br>
+        <input onclick="myFunction()" id ="asd"  class="text" placeholder="arr(0)"><br>
+        <div class="contain" >
+    
+          <p id="bold"> Enter Element you want to find -</p>
 
-  <form method="POST" action="/{{ req }}/">
-    {% csrf_token %}
-
-    <input onclick="myFunction()" id="asd" />
-
-    <!-- <button type="submit" class="btn btn-primary btn-lg">Submit</button> -->
-    <h3>Enter Element you want to find:</h3>
-    <button type="submit" name="sub" id="sub" class="btn btn-primary btn-lg">
-      Submit
-    </button>
-    <input type="hidden" />
+    
+          
+          
+          <button type="submit" name="sub" id="sub" class="btn btn-primary btn-lg">
+            Submit
+          </button>
+          <input type="hidden" />
+    </div>
   </form>
+      </div>
+     </div>
+    </div>
+  </div>
+</div>
+<!-- Footer -->
+<footer class="text-center">
+  
+    
+  </a><br><br>
+  <p> Make your-self perfect. Connect us <a href="https://coderegion.herokuapp.com/" data-toggle="tooltip" title="Visit Code_Region">www.coderegion.herokuapp.com/</a></p> 
+</footer>
+<script>
+// When the user scrolls down 50px from the top of the document, resize the header's font size
+window.onscroll = function() {scrollFunction()};
 
-  <script>
+function scrollFunction() {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    document.getElementById("header").style.width = "39rem";
+  } else {
+    document.getElementById("header").style.width = "100%";
+  }
+ 
+}
+
+</script>   
+      <script>
     let val = 0;
 
     function myFunction() {
       const newinput = document.createElement("input");
       newinput.type = "text";
       newinput.setAttribute("id", "asd");
+      newinput.setAttribute('class', "text");
+      newinput.setAttribute('placeholder', `arr ${val}`);
       newinput.setAttribute("onclick", "myFunction()");
 
       const old = document.getElementById("asd");
@@ -45,6 +386,7 @@
       val = val + 1;
       old.setAttribute("id", val);
       old.setAttribute("name", val);
+      newinput.setAttribute('placeholder', `arr ${val}`);
       old.setAttribute("onclick", "");
       const sub = document.getElementById("sub");
       sub.setAttribute("value", val);
@@ -54,6 +396,11 @@
       newNode;
     }
   </script>
+
 </body>
 
+
 </html>
+
+
+         

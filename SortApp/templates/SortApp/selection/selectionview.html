@@ -1,43 +1,355 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SortApp</title>
-  <!-- CSS only -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-  <!-- JavaScript Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Code_Region</title>
+	<!-- CSS only -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Averia+Libre:wght@300&family=Sora:wght@200&display=swap" rel="stylesheet">
+<style>
+body {
+    position: relative;
+  }
+
+#myScrollspy{
+  position :fixed;
+  top :130px;
+}
+  #section1,#section2,#section3,#section4,#section5,#section6 {
+ -webkit-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+  height:100%;
+  font-family : 'Roboto+Mono';
+  padding-top: 60px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+  padding-left: 50px;
+  background-color:lightblue;
+  margin-bottom:10px;
+  }
+  #title{
+    text-align: justify;
+    font-size : 40px;
+
+  }
+.contain{
+  font-size:30px;
+  font-family: 'Alegreya Sans', sans-serif;
+}
+  @media screen and (max-width: 810px) {
+    #section1, #section2, #section3, #section4, #section4  {
+      
+    }
+  }
+
+/* Style the header */
+header {
+  background-color: #2B2B2B;
+  padding: 30px;
+  text-align: center;
+  
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 88px;
+  
+  font-family : 'Roboto+Mono';
+  -webkit-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 7px 8px rgba(0, 0, 0, 0.12);
+  color: white;
+  text-align: center;
+  font-size: 30px; 
+  font-weight: bold;
+  width: 100%;
+  transition: 0.2s;
+}
+
+div.col-sm-9 div {
+    height: 250px;
+    font-size: 28px;
+  }
+.header__content-text {
+  text-align: center;
+  padding: 15px 20px;
+}
+
+.page__content-container {
+  
+  margin-top: 15rem;
+}
+
+table,th,tr,td{
+  text-align:center;
+  border: 1px solid black;
+  
+}
+table{
+  width: 100%;
+}
+#bold{
+  font-weight: bold;
+}
+.ais{
+  background-color:lightblue;
+}
+.square {
+  height: 90px;
+  width: 300px;
+  background-color: lightblue;
+
+}
+.text{
+  background-color: yellow;
+margin-bottom: 5px;
+box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.5);
+font-family: 'ProximaNova-Bold';
+border: 0;
+width: 100px;
+height:100px;
+text-align: center;
+text-transform: capitalize;
+padding:15px;
+padding-left:21px;
+text-transform:uppercase;
+
+}
+ input:focus, textarea:focus, select:focus{
+       
+    }
+    footer {
+    background-color: #2d2d30;
+    color: #f5f5f5;
+    padding: 32px;
+  }
+  footer a {
+    color: #f5f5f5;
+  }
+  footer a:hover {
+    color: #777;
+    text-decoration: none;
+  }
+</style>
 </head>
+<body data-spy="scroll" data-target="#myScrollspy" data-offset="20">
+<header id="header">Welcome to Selection Sort</header>
 
-<body>
-  <h1>Welcome To {{ req }}</h1>
+<div class="container">
+  <div class="row page__content-container">
+    <div class="col-xs-3">
+        <nav class="" id="myScrollspy">
+      <ul class="nav nav-pills nav-stacked" style="font-family: 'Sora', sans-serif;font-size:20px;">
+        <li class="active"><a href="#section1">Introduction - </a></li>
+        <li><a href="#section2">Algorithm -</a></li>
+        
+        <li><a href="#section4">Flowchart -</a></li>
+        <li><a href="#section5">Example -</a></li>
+        <li><a href="#section6">Practise -</a></li>
+        <!--<li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Section 4 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#section41">Section 4-1</a></li>
+            <li><a href="#section42">Section 4-2</a></li>                     
+          </ul>
+        </li>-->
+      </ul>
+    </nav>
+    </div>
+    <div class="col-xs-9 ">
+      <div id="section1" class="ais">    
+        <p id="title">What is Selection Sort ?</p>
+        <div class="contain">
+          <p>&emsp;&emsp;&emsp;Selection sort is a sorting algorithm that selects the smallest element from an unsorted list in each iteration and places that element at the beginning of the unsorted list.  It is one of the slow sorting technique. Given an unsorted array of integer values, a selection sort visits each element of the array, in turn. As it visits an element, it employs a second index to scan the array from the present location to the end while it identifies the least (smallest) value in that segment of the array. It then swaps that least value with the current value.</p>
+          <p>&emsp;&emsp;&emsp;The time and space complexity for bubble sort is: <br> •	Time complexity (Best Case) : Ω(n) <br>•	Time complexity (Worst Case) : O(n2) <br>•	Time complexity (Average Case) : θ(n2) <br>•	Space complexity : O(1) </p>
+        </div>
+      </div>
+      <div id="section2"> 
+        <p id="title">Algorithm :</p>
+        <div class="contain" > 
+          <p> Selection sort Algorithm is as follows: <br>
+              •	SELECTION SORT(ARR, N) <br>
+            <b>Step 1</b>:  Repeat Steps 2 and 3 for K = 1 to N-1 <br>
+            <b>Step 2</b>:  CALL SMALLEST(ARR, K, N, POS) <br> 
+            <b>Step 3</b>:  SWAP A[K] with ARR[POS] <br>
+            &emsp;&emsp;&emsp;[END OF LOOP] <br>
+            <b>Step 4</b>:  Exit <br>
+          </p>
+          <p> •	SMALLEST (ARR, K, N, POS) <br>
+            <b>Step 1</b>:  [INITIALIZE] SET SMALL = ARR[K] <br>
+            <b>Step 2</b>:  [INITIALIZE] SET POS = K <br>
+            <b>Step 3</b>:  Repeat for J = K+1 to N -1 <br>
+            &emsp;&emsp;&emsp;IF SMALL > ARR[J] <br>
+            &emsp;&emsp;&emsp;SET SMALL = ARR[J] <br>
+            &emsp;&emsp;&emsp;SET POS = J <br>
+            &emsp;&emsp;&emsp;[END OF IF] <br>
+            &emsp;&emsp;&emsp;[END OF LOOP] <br>
+            <b>Step 4</b>:  Repeat for J = K+1 to N -1 <br>
+          </p>
+        </div>
+      </div>        
+      
+      <div id="section4">    
+      <p id="title">Flowchart : </p>  <br>    
+      <div >
+        <img src={% static ".png" %}>
+      </div>
+      </div>
+      <div id="section5">  
+      <p id="title">	Example demonstrating Selection sort:</p>  
+      <div class="contain">      
+        <p>Suppose we have the following array, which we have to sort.<br>
+                <table>
+                  <tr>
+                    <th>22</th>	
+                    <th>18</th>
+                    <th>16</th>
+                    <th>10</th>
+                    <th>19</th>
+                    <th>15</th>
+                  </tr>
+                </table>
+                There are 6 elements in this array, so we will need 5 steps to sort it. <br>
+                <br><a id="bold"> Step 1:- </a> <br>
+                The first position in the array has 22 stores. <br>
+                If you search in the whole array, you get the smallest value 10, and then you replace 22 with 1. <br>
+                <table>
+                  <tr>
+                    <td style="color:red;">10 </td>
+                    <th>18</th>
+                    <th>16</th>
+                    <th>22</th>
+                    <th>19</th>
+                    <th>15</th>
+                  </tr>
+                </table>
+                <br><a id="bold"> Step 2:- </a><br>
+                The second position in the array has 18 stores. <br>
+                If you search in the whole array, you get the second smallest value 15, and then you replace 18 with 15. <br>
+                <table>
+                  <tr>
+                    <td style="color:red;">10</td>
+                    <td style="color:red;">15</td>
+                    <th>16</th>
+                    <th>22</th>
+                    <th>19</th>
+                    <th>18</th>
+                  </tr>
+                </table>
+                <br><a id="bold"> Step 3:- </a><br>
+                The third position in the array has 16 stores, but there will be no change in this place because there is no element smaller than 16, which means that it is already sorted.<br>            
+                <table>
+                  <tr>
+                    <td style="color:red;">10</td>
+                    <td style="color:red;">15</td>
+                    <td style="color:red;">16</td>
+                    <th>22</th>
+                    <th>19</th>
+                    <th>18</th>
+                  </tr>
+                </table>
+                <br><a id="bold"> Step 4:- </a><br>
+                The fourth position in the array has 22 stores. <br>
+                If you search in the whole array, you get the second smallest value 18, and then you replace 22 with 18. <br>
+                <table>
+                  <tr>
+                    <td style="color:red;">10</td>
+                    <td style="color:red;">15</td>
+                    <td style="color:red;">16</td>
+                    <td style="color:red;">18</td>
+                    <th>19</th>
+                    <th>22</th>
+                  </tr>
+                </table>
+                <br><a id="bold"> Step 5:- </a><br>
+                The fifth position in the array has 19 stores, but there will be no change in this place because there is no element smaller than 19, which means that it is already sorted. <br>            
+                <table>
+                  <tr>
+                    <td style="color:red;">10</td>
+                    <td style="color:red;">15</td>
+                    <td style="color:red;">16</td>
+                    <td style="color:red;">18</td>
+                    <td style="color:red;">19</td>
+                    <td style="color:red;">22</td>
+                  </tr>
+                </table>
+        </p>
+      </div>
+      </div>
+      <div id="section6">    
+        <p id="title">Practise : </p>  <br>    
+        <form method="POST" action="/{{ req }}/">
+          <div class="contain" >
+          {% csrf_token %}
+            <p id="bold"> Enter Elements in below array -</p>
+    
+          </div>
+        </br>
+        <input onclick="myFunction()" id ="asd"  class="text" placeholder="arr(0)"><br>
+        <div class="contain" >
+    
+          <p id="bold"> Enter Element you want to find -</p>
 
-  <form method="POST" action="/{{ req }}/">
-    {% csrf_token %}
-
-    <input onclick="myFunction()" id="asd" />
-
-    <!-- <button type="submit" class="btn btn-primary btn-lg">Submit</button> -->
-    <h3>Enter Element you want to find:</h3>
-    <button type="submit" name="sub" id="sub" class="btn btn-primary btn-lg">
-      Submit
-    </button>
-    <input type="hidden" />
+    
+          
+          
+          <button type="submit" name="sub" id="sub" class="btn btn-primary btn-lg">
+            Submit
+          </button>
+          <input type="hidden" />
+    </div>
   </form>
+      </div>
+     </div>
+    </div>
+  </div>
+</div>
+<!-- Footer -->
+<footer class="text-center">
+  
+    
+  </a><br><br>
+  <p> Make your-self perfect. Connect us <a href="https://coderegion.herokuapp.com/" data-toggle="tooltip" title="Visit Code_Region">www.coderegion.herokuapp.com/</a></p> 
+</footer>
+<script>
+// When the user scrolls down 50px from the top of the document, resize the header's font size
+window.onscroll = function() {scrollFunction()};
 
-  <script>
+function scrollFunction() {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    document.getElementById("header").style.width = "39rem";
+  } else {
+    document.getElementById("header").style.width = "100%";
+  }
+ 
+}
+
+</script>   
+      <script>
     let val = 0;
 
     function myFunction() {
       const newinput = document.createElement("input");
       newinput.type = "text";
       newinput.setAttribute("id", "asd");
+      newinput.setAttribute('class', "text");
+      newinput.setAttribute('placeholder', `arr ${val}`);
       newinput.setAttribute("onclick", "myFunction()");
 
       const old = document.getElementById("asd");
@@ -45,6 +357,7 @@
       val = val + 1;
       old.setAttribute("id", val);
       old.setAttribute("name", val);
+      newinput.setAttribute('placeholder', `arr ${val}`);
       old.setAttribute("onclick", "");
       const sub = document.getElementById("sub");
       sub.setAttribute("value", val);
@@ -54,6 +367,11 @@
       newNode;
     }
   </script>
+
 </body>
 
+
 </html>
+
+
+         
